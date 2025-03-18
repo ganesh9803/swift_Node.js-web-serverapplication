@@ -15,11 +15,10 @@ app.get("/", (req: Request, res: Response) => {
     res.send("API is running...");
 });
 
-connectDB();
 
 connectDB().then(() => {
     app.listen(5000, () => {
-        console.log("Server is running on http://localhost:5000");
+        console.log("Server is running on PORT:5000");
     });
 });
 
