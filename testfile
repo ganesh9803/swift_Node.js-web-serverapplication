@@ -1,0 +1,70 @@
+Test API Endpoints
+1. Load Users from JSONPlaceholder
+📌 Endpoint: GET /api/load
+
+URL: http://localhost:5000/api/load
+Method: GET
+Expected Response: 200 OK (Empty body if successful)
+Error Case: 500 Internal Server Error if MongoDB fails
+
+2. Get a Specific User by ID
+📌 Endpoint: GET /api/users/:userId
+
+URL: http://localhost:5000/api/users/1
+Method: GET
+Expected Response:
+{
+  "id": 1,
+  "name": "Leanne Graham",
+  "posts": [...],
+  "comments": [...]
+}
+
+Error Case:
+404 Not Found if user does not exist
+
+3. ✅ 3. Add a New User
+📌 Endpoint: PUT /api/users
+
+URL: http://localhost:5000/api/users
+Method: PUT
+Body (JSON):
+{
+  "id": 11,
+  "name": "John Doe",
+  "email": "john@example.com",
+  "username": "johndoe"
+}
+
+Expected Response:
+{
+  "message": "User added successfully"
+}
+
+📌Error Case:
+400 Bad Request if user already exists.
+
+4. Delete All Users
+📌 Endpoint: DELETE /api/users
+
+URL: http://localhost:5000/api/users
+Method: DELETE
+
+Expected Response:
+{
+  "message": "All users deleted"
+}
+
+Error Case: 500 Internal Server Error if deletion fails.
+
+5. Delete a Specific User
+📌 Endpoint: DELETE /api/users/:userId
+
+URL: http://localhost:5000/api/users/11
+Method: DELETE
+Expected Response:
+{
+  "message": "User deleted successfully"
+}
+
+Error Case: 404 Not Found if user doesn’t exist.
