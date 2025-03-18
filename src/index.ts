@@ -17,4 +17,11 @@ app.get("/", (req: Request, res: Response) => {
 
 connectDB();
 
+connectDB().then(() => {
+    app.listen(5000, () => {
+        console.log("Server is running on http://localhost:5000");
+    });
+});
+
+
 export default app;
